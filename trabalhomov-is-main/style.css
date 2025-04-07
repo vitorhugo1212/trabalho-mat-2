@@ -1,0 +1,278 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #f5f5f5;
+  color: #333;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: aliceblue;
+  padding: 0px 30px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.logo {
+  width: 200px;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border: 2px solid #ddd;
+  border-radius: 50px;
+  padding: 15px 20px;
+  width: 600px;
+  max-width: 100%;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+  transition: border 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.search-box:hover {
+  border: 2px solid #ffa500;
+  box-shadow: 0 8px 14px rgba(255, 165, 0, 0.3);
+  transform: scale(1.02);
+}
+
+.search-box:focus-within {
+  border-color: #ff6600;
+  box-shadow: 0 8px 20px rgba(255, 102, 0, 0.4);
+  transform: scale(1.02);
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  padding: 12px;
+  flex-grow: 1;
+  font-size: 18px;
+  background: transparent;
+  transition: all 0.3s ease;
+}
+
+.search-box input::placeholder {
+  color: #aaa;
+  transition: color 0.3s ease;
+}
+
+.search-box input:focus::placeholder {
+  color: transparent;
+}
+
+.search-box button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.search-box button:hover {
+  transform: scale(1.2);
+}
+
+.search-box img {
+  width: 24px;
+  transition: transform 0.3s ease;
+}
+
+.search-box button:active img {
+  transform: scale(0.95);
+}
+
+.header-icons {
+  display: flex;
+  gap: 20px;
+}
+
+#cartIcon {
+  position: relative;
+  cursor: pointer;
+}
+
+#cartIcon img {
+  width: 40px;
+}
+
+#cart-count {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: red;
+  color: white;
+  font-size: 12px;
+  border-radius: 50%;
+  padding: 3px 6px;
+}
+
+aside {
+  position: fixed;
+  top: 100px;
+  left: 0;
+  width: 250px;
+  background: white;
+  height: 100%;
+  padding: 30px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  z-index: 900;
+}
+
+aside.collapsed {
+  transform: translateX(-100%);
+}
+
+.toggle-btn {
+  position: absolute;
+  top: 20px;
+  right: -25px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+aside ul {
+  list-style: none;
+  margin-top: 20px;
+}
+
+aside ul li a {
+  text-decoration: none;
+  color: #333;
+  display: block;
+  padding: 10px 0;
+}
+
+main {
+  margin-left: 270px;
+  padding: 140px 30px 50px;
+}
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+.product {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  animation: fadeIn 0.8s ease forwards;
+  animation-delay: 0.3s;
+}
+
+/* Efeito ao passar o mouse */
+.product:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+/* Imagem */
+.product img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Título e Preço */
+.product h3 {
+  font-size: 22px;
+  margin: 15px 0 10px;
+}
+
+.product .price {
+  font-size: 20px;
+  color: #27ae60;
+  margin-bottom: 10px;
+}
+
+/* Botão */
+.buy-btn {
+  background: orangered;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.buy-btn:hover {
+  background: darkorange;
+}
+
+/* ANIMAÇÕES */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 40px;
+  margin-top: 50px;
+}
+
+@media (max-width: 768px) {
+  aside {
+    display: none;
+  }
+
+  main {
+    margin-left: 0;
+    padding-top: 180px;
+  }
+
+  .search-box {
+    width: 90%;
+  }
+
+  .logo {
+    width: 150px;
+  }
+}
