@@ -4,32 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mobiliarium - Carrinho</title>
-  <link rel="stylesheet" href="style.css">
-  link
-  
+  <link rel="stylesheet" href="stylecarrinho.css">
 </head>
 <body>
   <!-- HEADER -->
   <header>
-    <div class="logo-container">
-      <a href="index.html"><img src="imagens/logo.png" alt="Mobiliarium" class="logo"></a>
-    </div>
     <nav>
       <ul>
-        <li><a href="index.html">Início</a></li>
-        <li><a href="produto.html">Produtos</a></li>
-        <li><a href="cadastro.html">Cadastro</a></li>
-        <li><a href="carrinho.html">Carrinho</a></li>
+        <li><a href="index.html" class="home-link">Home</a></li>
       </ul>
     </nav>
   </header>
+  
 
   <!-- MAIN - Carrinho de Compras -->
   <main>
     <section class="cart-page">
       <h1>Seu Carrinho</h1>
       <ul id="cart-items">
-        <!-- Os itens do carrinho serão listados aqui via script -->
+        <!-- Itens do carrinho serão exibidos aqui -->
       </ul>
       <p id="cart-total">Total: R$ 0,00</p>
       <div class="cart-actions">
@@ -44,42 +37,40 @@
     <p>&copy; 2025 Mobiliarium. Todos os direitos reservados.</p>
   </footer>
 
+  <!-- JavaScript -->
   <script>
-    // Exemplo simples de gerenciamento de carrinho (apenas para demonstração)
-    document.addEventListener("DOMContentLoaded", function () {
-      let cart = []; // Inicia vazio
-      
-      function updateCartUI() {
-        const cartItems = document.getElementById("cart-items");
-        const cartTotal = document.getElementById("cart-total");
-        cartItems.innerHTML = "";
-        let total = 0;
-        cart.forEach(item => {
-          let li = document.createElement("li");
-          li.textContent = `${item.name} - R$ ${item.price.toFixed(2)}`;
-          cartItems.appendChild(li);
-          total += item.price;
-        });
-        cartTotal.textContent = `Total: R$ ${total.toFixed(2)}`;
-      }
-      
-      document.getElementById("clear-cart").addEventListener("click", function () {
-        cart = [];
-        updateCartUI();
+    // Selecionar elementos
+    const cartItemsElement = document.getElementById('cart-items');
+    const cartTotalElement = document.getElementById('cart-total');
+    const clearCartButton = document.getElementById('clear-cart');
+
+    // Carregar itens do localStorage
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    // Atualizar o carrinho
+    function updateCart() {
+      cartItemsElement.innerHTML = '';
+      let total = 0;
+
+      cart.forEach(item => {
+        const listItem = document.createElement('li');
+        listItem.innerHTML = `<span>${item.name}</span><span>R$ ${item.price.toFixed(2)}</span>`;
+        cartItemsElement.appendChild(listItem);
+        total += item.price;
       });
-      
-      document.getElementById("checkout").addEventListener("click", function () {
-        if (cart.length === 0) {
-          alert("Seu carrinho está vazio!");
-        } else {
-          alert("Compra finalizada! Obrigado pela sua compra.");
-          cart = [];
-          updateCartUI();
-        }
-      });
-      
-      // Aqui você pode carregar os itens do carrinho de uma fonte (ex: localStorage) se necessário.
+
+      cartTotalElement.textContent = `Total: R$ ${total.toFixed(2)}`;
+    }
+
+    // Limpar o carrinho
+    clearCartButton.addEventListener('click', () => {
+      cart = [];
+      localStorage.removeItem('cart');
+      updateCart();
     });
+
+    // Inicializar o carrinho
+    updateCart();
   </script>
 </body>
 </html>
