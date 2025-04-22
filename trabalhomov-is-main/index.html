@@ -26,8 +26,7 @@
   </header>
 
   <!-- ASIDE -->
-  <aside id="sidebar">
-    <div class="toggle-btn" id="toggleAside">⬅️</div>
+  <aside class="sidebar">
     <ul>
       <li><a href="#">Promoções</a></li>
       <li><a href="#">Salas</a></li>
@@ -43,42 +42,39 @@
         <img src="https://m.media-amazon.com/images/I/61+cfbCLYpL._AC_SL1000_.jpg" alt="Sofá Retrátil" />
         <h3>Sofá Retrátil</h3>
         <p class="price">R$ 2.131,92</p>
-        <a href="produto.html" class="ver-produtos-btn">Ver Produtos</a>
+        <a href="produto.html" class="ver-produtos-btn">Ver Produto</a>
       </div>
       <div class="product">
         <img src="https://madesacms.vtexassets.com/arquivos/ids/261720-1495-1495" alt="Mesa de Jantar" />
         <h3>Mesa de Jantar</h3>
         <p class="price">R$ 1.692,59</p>
-        <a href="produto.html" class="ver-produtos-btn">Ver Produtos</a>
+        <a href="produto2.html" class="ver-produtos-btn">Ver Produto</a>
+      </div>
+      <div class="product">
+        <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRjiUtP_u3V9sPYPz8LxsYDkVeOAlOL4vmsrt89o8nYiJQGgrRuC77nVY5FSZLBYzsfMMQkHKd6R8YqidU4nPaH_YMkk67gBRT-sRjHxoM&usqp=CAE" alt="Cristaleira com Led">
+        <h3>Cristaleira com Led</h3>
+        <h5 class="original-price">De:R$ 1.152,92</h5>
+        <h4 class="discount-label">Por:</h4>
+        <p class="price">982,57</p>
+        <a href="produto3.html" class="ver-produtos-btn">Ver Produto</a>
+      </div>
+      <div class="product">
+        <img src="https://product-hub-prd.madeiramadeira.com.br/670697/images/cd0fd01a-d163-4da8-8d28-f4946de3192a04aaed8040ecfa5085AMBIENTE.jpg?width=700&canvas=1:1&bg-color=FFF" alt="Guarda Roupa com Espelho">
+        <h3>Guarda Roupa com Espelho</h3>
+        <h5 class="original-price">De: R$ 1.213,30</h5>
+        <h4 class="discount-label">Por:</h4>
+        <p class="price">R$ 779,98</p>
+        <a href="produto4.html" class="ver-produtos-btn">Ver Produto</a>
+      </div>
+      <div class="product">
+        <img src="https://a-static.mlcdn.com.br/800x560/cama-box-queen-box-colchao-gazin-de-mola-59cm-de-altura-diamond-blue/magazineluiza/229826800/397293850fb4e16afd83e506177c2059.jpg" alt="">
       </div>
     </section>
   </main>
 
   <!-- FOOTER -->
   <footer>
-    <p>&copy; 2025 Mobiliarium. Todos os direitos reservados.</p>
+    <a href="https://www.instagram.com/mobiliariumm?igsh=MTUxMnVhbXRnY3o3eA=="><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/1024px-Instagram_icon.png" alt="" width="100px"></a>
   </footer>
-
-  <!-- SCRIPT -->
-  <script>
-      // TOGGLE ASIDE
-      const toggleBtn = document.getElementById('toggleAside');
-      const aside = document.getElementById('sidebar');
-      toggleBtn.addEventListener('click', () => {
-        aside.classList.toggle('collapsed');
-        toggleBtn.textContent = aside.classList.contains('collapsed') ? '➡️' : '⬅️';
-      });
-
-      // FILTRO DE PESQUISA
-      const searchInput = document.getElementById('searchInput');
-      const products = document.querySelectorAll('.product');
-      searchInput.addEventListener('input', () => {
-        const query = searchInput.value.toLowerCase();
-        products.forEach(product => {
-          const title = product.querySelector('h3').textContent.toLowerCase();
-          product.style.display = title.includes(query) ? 'block' : 'none';
-        });
-      });
-  </script>
 </body>
 </html>

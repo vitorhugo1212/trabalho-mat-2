@@ -20,7 +20,7 @@
   <main>
     <section class="registration-form">
       <h1>Cadastro</h1>
-      <form id="registrationForm">
+      <form id="registrationForm" action="index.html" method="GET">
         <div class="form-group">
           <label for="name">Nome Completo</label>
           <input type="text" id="name" name="name" placeholder="Digite seu nome completo" required>
@@ -36,28 +36,11 @@
         <button type="submit" class="submit-btn">Cadastrar</button>
       </form>
     </section>
+    
   </main>
 
-  <!-- FOOTER -->
   <footer>
-    <p>&copy; 2025 Mobiliarium. Todos os direitos reservados.</p>
+    <a href="https://www.instagram.com/mobiliariumm?igsh=MTUxMnVhbXRnY3o3eA=="><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/1024px-Instagram_icon.png" alt="" width="100px"></a>
   </footer>
-
-  <script>
-    document.getElementById('registrationForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Evita o envio padrão do formulário
-  
-    // Obtendo os dados do formulário
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-  
-    // Salvando os dados no localStorage para exibição na página inicial
-    localStorage.setItem('userName', name);
-    localStorage.setItem('userEmail', email);
-  
-    // Redirecionando para a página inicial
-    window.location.href = 'index.html';
-  });
-  </script>
 </body>
 </html>

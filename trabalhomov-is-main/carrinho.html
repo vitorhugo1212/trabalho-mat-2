@@ -32,45 +32,8 @@
     </section>
   </main>
 
-  <!-- FOOTER -->
   <footer>
-    <p>&copy; 2025 Mobiliarium. Todos os direitos reservados.</p>
+    <a href="https://www.instagram.com/mobiliariumm?igsh=MTUxMnVhbXRnY3o3eA=="><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/1024px-Instagram_icon.png" alt="" width="100px"></a>
   </footer>
-
-  <!-- JavaScript -->
-  <script>
-    // Selecionar elementos
-    const cartItemsElement = document.getElementById('cart-items');
-    const cartTotalElement = document.getElementById('cart-total');
-    const clearCartButton = document.getElementById('clear-cart');
-
-    // Carregar itens do localStorage
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-    // Atualizar o carrinho
-    function updateCart() {
-      cartItemsElement.innerHTML = '';
-      let total = 0;
-
-      cart.forEach(item => {
-        const listItem = document.createElement('li');
-        listItem.innerHTML = `<span>${item.name}</span><span>R$ ${item.price.toFixed(2)}</span>`;
-        cartItemsElement.appendChild(listItem);
-        total += item.price;
-      });
-
-      cartTotalElement.textContent = `Total: R$ ${total.toFixed(2)}`;
-    }
-
-    // Limpar o carrinho
-    clearCartButton.addEventListener('click', () => {
-      cart = [];
-      localStorage.removeItem('cart');
-      updateCart();
-    });
-
-    // Inicializar o carrinho
-    updateCart();
-  </script>
 </body>
 </html>

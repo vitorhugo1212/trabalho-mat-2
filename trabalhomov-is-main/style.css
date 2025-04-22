@@ -1,333 +1,377 @@
-/* RESET */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
-}
-
+/* BODY */
 body {
-  background: #f5f5f5;
-  color: #333;
+  margin: 0; /* Remove todas as margens padrão do navegador para garantir consistência visual */
+  padding: 0; /* Remove o preenchimento padrão do navegador */
+  box-sizing: border-box; /* Garante que padding e bordas sejam incluídos no cálculo da largura e altura dos elementos */
+  font-family: Arial, sans-serif; /* Define a fonte padrão para o site, garantindo legibilidade */
+  background: #f5f5f5; /* Define um fundo claro para todo o site, criando um visual neutro e moderno */
+  color: #333; /* Define a cor do texto como cinza escuro, que facilita a leitura e reduz o contraste agressivo */
 }
 
 /* HEADER */
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: aliceblue;
-  padding: 0 30px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
+  display: flex; /* Organiza os itens no cabeçalho em uma linha flexível */
+  gap: 20px; /* Adiciona um espaço de 20px entre os itens dentro do cabeçalho */
+  align-items: center; /* Alinha os itens verticalmente ao centro */
+  background: aliceblue; /* Cor de fundo suave e clara para o cabeçalho */
+  padding: 0 30px; /* Adiciona 30px de padding nas laterais do cabeçalho para dar espaçamento */
+  position: fixed; /* Fixa o cabeçalho no topo da página */
+  top: 0; /* Posiciona o cabeçalho no topo da tela */
+  left: 0; /* Posiciona o cabeçalho na lateral esquerda */
+  width: 100%; /* Garante que o cabeçalho ocupe toda a largura da tela */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra suave ao cabeçalho, criando um efeito de profundidade */
+  z-index: 1000; /* Garante que o cabeçalho ficará sobre outros elementos da página */
+}
+
+/* Logo */
+.logo-container a {
+  display: inline-block; /* Faz com que o link que envolve o logo seja tratado como um bloco inline */
 }
 
 .logo {
-  width: 200px;
+  max-width: 200px; /* Limita a largura máxima do logo para 200px */
 }
 
+/* Barra de Pesquisa */
 .search-box {
-  display: flex;
-  align-items: center;
-  background: #fff;
-  border: 2px solid #ddd;
-  border-radius: 50px;
-  padding: 15px 20px;
-  width: 600px;
-  max-width: 100%;
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
-  transition: border 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+  display: flex; /* Organiza a caixa de pesquisa com um layout flexível */
+  align-items: center; /* Alinha o conteúdo da caixa de pesquisa (campo de texto e ícone) verticalmente ao centro */
+  background: #fff; /* Fundo branco para a caixa de pesquisa */
+  border: 2px solid #ddd; /* Borda cinza clara ao redor da caixa de pesquisa */
+  border-radius: 50px; /* Deixa os cantos da caixa de pesquisa arredondados */
+  padding: 10px 20px; /* Adiciona padding de 10px vertical e 20px horizontal */
+  width: 50%; /* A caixa de pesquisa ocupa 50% da largura do elemento pai */
+  max-width: 600px; /* Limita a largura máxima da caixa de pesquisa a 600px */
+  transition: border 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease; /* Adiciona uma transição suave para a borda, sombra e transformações */
 }
 
 .search-box:hover {
-  border: 2px solid #ffa500;
-  box-shadow: 0 8px 14px rgba(255, 165, 0, 0.3);
-  transform: scale(1.02);
-}
-
-.search-box:focus-within {
-  border-color: #ff6600;
-  box-shadow: 0 8px 20px rgba(255, 102, 0, 0.4);
-  transform: scale(1.02);
+  border-color: #ffa500; /* Muda a cor da borda para laranja quando o usuário passa o mouse sobre a caixa de pesquisa */
+  box-shadow: 0 8px 14px rgba(255, 165, 0, 0.3); /* Adiciona uma sombra laranja suave ao redor da caixa de pesquisa */
+  transform: scale(1.02); /* Levemente aumenta o tamanho da caixa de pesquisa */
 }
 
 .search-box input {
-  border: none;
-  outline: none;
-  padding: 12px;
-  flex-grow: 1;
-  font-size: 18px;
-  background: transparent;
-  transition: all 0.3s ease;
+  border: none; /* Remove a borda padrão do campo de texto */
+  outline: none; /* Remove o contorno padrão ao clicar no campo de texto */
+  padding: 10px; /* Adiciona padding interno ao campo de texto */
+  flex-grow: 1; /* Faz com que o campo de texto ocupe todo o espaço disponível dentro da caixa de pesquisa */
+  font-size: 16px; /* Define o tamanho da fonte do campo de texto */
+  background: transparent; /* Deixa o fundo do campo de texto transparente */
 }
 
 .search-box input::placeholder {
-  color: #aaa;
-  transition: color 0.3s ease;
-}
-
-.search-box input:focus::placeholder {
-  color: transparent;
+  color: #aaa; /* Cor do texto do placeholder para um cinza claro */
 }
 
 .search-box button {
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.search-box button:hover {
-  transform: scale(1.2);
+  background: transparent; /* Fundo transparente para o botão */
+  border: none; /* Remove a borda do botão */
+  cursor: pointer; /* Altera o cursor para um ponteiro quando o botão é clicado */
 }
 
 .search-box img {
-  width: 24px;
-  transition: transform 0.3s ease;
+  width: 24px; /* Define a largura da imagem (ícone) dentro da caixa de pesquisa */
 }
 
-.search-box button:active img {
-  transform: scale(0.95);
-}
-
+/* Ícones do Cabeçalho */
 .header-icons {
-  display: flex;
+  display: flex; /* Organiza os ícones dentro do cabeçalho em linha */
+  align-items: center; /* Alinha os ícones verticalmente ao centro */
 }
 
+/* Carrinho de Compras */
 #cartIcon {
-  position: relative;
-  cursor: pointer;
+  position: flex; /* A propriedade 'flex' aqui não é válida. Se for para posicionar o carrinho, remova esta linha */
+  cursor: pointer; /* Altera o cursor para um ponteiro quando o ícone de carrinho é clicado */
 }
 
 #cartIcon img {
-  width: 40px;
+  width: 40px; /* Define o tamanho da imagem do ícone do carrinho */
 }
 
+/* Contagem de Itens no Carrinho */
 #cart-count {
-  position: absolute;
-  top: 35px;
-  right: 20px;
-  background: red;
-  color: white;
-  font-size: 12px;
-  border-radius: 50%;
-  padding: 3px 6px;
+  position: absolute; /* Posiciona o contador de itens de forma absoluta em relação ao ícone de carrinho */
+  top: 35px; /* Posiciona o contador de itens para cima do ícone */
+  right: 20px; /* Posiciona o contador de itens à direita do ícone */
+  background: red; /* Cor de fundo vermelha para o contador */
+  color: white; /* Cor do texto (contagem) em branco */
+  font-size: 12px; /* Tamanho da fonte do contador */
+  border-radius: 50%; /* Faz o contador de itens se tornar um círculo */
+  padding: 3px 6px; /* Adiciona padding ao redor do texto do contador */
 }
 
-/* ASIDE */
 aside {
-  position: fixed;
   top: 100px;
-  left: 0;
+  position: fixed;
+  background: #333;
   width: 250px;
-  background: white;
-  height: 100%;
-  padding: 30px;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-  z-index: 900;
-}
-
-aside.collapsed {
-  transform: translateX(-100%);
-}
-
-.toggle-btn {
-  position: absolute;
-  top: 20px;
-  right: -25px;
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  height: 1000px;
+  padding: 10px;
 }
 
 aside ul {
-  list-style: none;
-  margin-top: 20px;
+  list-style: none; /* Remove os marcadores da lista */
+  margin-top: 20px; /* Espaço superior */
 }
 
 aside ul li a {
-  text-decoration: none;
-  color: #333;
-  display: block;
-  padding: 10px 0;
+  text-decoration: none; /* Remove o sublinhado dos links */
+  color: whitesmoke; /* Cor do texto dos links */
+  display: block; /* Exibe os links como blocos */
+  padding: 10px 0; /* Espaçamento interno */
 }
 
-/* MAIN CONTENT */
+/* MAIN CONTENT: Estiliza o conteúdo principal da página */
 main {
-  margin-left: 270px;
-  padding: 140px 30px 50px;
+  position: relative;
+  margin-left: 270px;  /*Espaçamento à esquerda para compensar o menu lateral */
+  padding: 140px 30px 50px; /* Espaçamento interno */
 }
 
+/* PRODUTOS: Exibe os produtos em uma grade */
 .products {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 30px;
-  animation: fadeInUp 1s ease-in-out;
+  display: grid; /* Usado para exibir os produtos em formato de grid */
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Define as colunas com tamanho flexível */
+  gap: 30px; /* Espaçamento entre os produtos */
+  animation: fadeInUp 1s ease-in-out; /* Animação para entrada suave */
 }
 
-.product, .product2 {
-  background: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  opacity: 0;
-  animation: fadeIn 0.8s ease forwards;
-  animation-delay: 0.3s;
+/* ESTILO DOS PRODUTOS */
+.product{
+  background: #fff; /* Fundo branco para os produtos */
+  padding: 20px; /* Espaçamento interno */
+  border-radius: 10px; /* Bordas arredondadas */
+  text-align: center; /* Centraliza o conteúdo do produto */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra leve */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efeito de transição no hover */
+  opacity: 0; /* Inicialmente invisível */
+  animation: fadeIn 0.8s ease forwards; /* Animação para aparecer com um efeito suave */
+  animation-delay: 0.3s; /* Atraso na animação */
 }
 
-.product:hover, .product2:hover {
-  transform: translateY(-10px) scale(1.03);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+.product:hover{
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra mais forte no hover */
 }
 
-.product img, .product2 img {
-  width: 100%;
-  height: 280px;
-  object-fit: cover;
-  border-radius: 8px;
+.product img{
+  width: 100%; /* Imagem ocupa toda a largura do espaço disponível */
+  height: 280px; /* Altura fixa das imagens */
+  object-fit: cover; /* As imagens se ajustam sem distorção */
+  border-radius: 8px; /* Bordas arredondadas para as imagens */
 }
 
-.product h3, .product2 h3 {
-  font-size: 22px;
-  margin: 15px 0 10px;
+.product h3{
+  font-size: 22px; /* Tamanho da fonte do título */
+  margin: 15px 0 10px; /* Espaçamento superior e inferior */
 }
 
-.product .price, .product2 .price {
-  font-size: 20px;
-  color: #27ae60;
-  margin-bottom: 10px;
+.product .price{
+  font-size: 20px; /* Tamanho da fonte do preço */
+  color: #27ae60; /* Cor verde para o preço */
+  margin-bottom: 10px; /* Espaçamento inferior */
 }
 
-/* ANIMATIONS */
+/* ANIMAÇÕES */
 @keyframes fadeIn {
   0% {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(20px); /* Começa com a opacidade zero e deslocamento */
   }
   100% {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0); /* Finaliza com opacidade total e sem deslocamento */
   }
 }
 
 @keyframes fadeInUp {
   0% {
     opacity: 0;
-    transform: translateY(50px);
+    transform: translateY(50px); /* Começa com a opacidade zero e deslocamento */
   }
   100% {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0); /* Finaliza com opacidade total e sem deslocamento */
   }
 }
 
 /* FOOTER */
 footer {
-  background: #333;
-  color: white;
+  display: flex;
+  position: absolute;
   text-align: center;
-  padding: 40px;
-  margin-top: 50px;
+  width: 100%;
+  background: #333;
+  padding: 10px;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* RESPONSIVE */
-@media (max-width: 768px) {
+/* BOTÕES E LINKS: Estiliza os botões e links de interação */
+.ver-produtos-btn, .comprar-btn {
+  display: inline-block; /* Exibe os botões em linha */
+  padding: 10px 20px; /* Espaçamento interno */
+  border-radius: 8px; /* Bordas arredondadas */
+  font-weight: bold; /* Deixa o texto em negrito */
+  text-decoration: none; /* Remove sublinhado */
+  transition: background-color 0.3s; /* Transição suave na cor de fundo */
+}
+
+.ver-produtos-btn {
+  background-color: #ff6600; /* Cor de fundo laranja */
+  color: #ffffff; /* Texto branco */
+}
+
+.ver-produtos-btn:hover {
+  background-color: #cc5200; /* Cor de fundo mais escura no hover */
+}
+
+.user-info {
+  background-color: #ff6600; /* Cor de fundo laranja */
+  color: white; /* Texto branco */
+  text-align: center; /* Centraliza o texto */
+  padding: 10px; /* Espaçamento interno */
+  border-radius: 8px; /* Bordas arredondadas */
+  margin-right: 15px; /* Espaçamento à direita */
+  font-size: 1rem; /* Tamanho da fonte */
+}
+
+.cadastrar-se-btn {
+  display: inline-block; /* Exibe o botão em linha */
+  padding: 12px 30px; /* Espaçamento interno */
+  border-radius: 25px; /* Bordas arredondadas */
+  background-color:#ff6600; /* Cor de fundo laranja */
+  color: #ffffff; /* Texto branco */
+  font-size: 16px; /* Tamanho da fonte */
+  font-weight: bold; /* Texto em negrito */
+  text-decoration: none; /* Remove o sublinhado */
+  text-align: center; /* Centraliza o texto */
+  transition: all 0.3s ease; /* Transição suave */
+  position: relative; /* Necessário para o efeito de animação */
+  overflow: hidden; /* Garante que o efeito de animação fique dentro do botão */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra leve */
+}
+
+.cadastrar-se-btn:hover {
+  background-color:#ff6600; /* Mantém a cor de fundo laranja no hover */
+  transform: translateY(-2px); /* Efeito de elevação */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra mais forte no hover */
+}
+
+.cadastrar-se-btn:active {
+  transform: translateY(0); /* Remove a elevação quando o botão é pressionado */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); /* Reduz a sombra quando pressionado */
+}
+
+.cadastrar-se-btn::before {
+  content: ''; /* Cria um pseudo-elemento antes do conteúdo */
+  position: absolute; /* Posiciona o elemento antes do conteúdo do botão */
+  top: 50%; /* Centraliza verticalmente */
+  left: 50%; /* Centraliza horizontalmente */
+  width: 0; /* Inicialmente invisível */
+  height: 0; /* Inicialmente invisível */
+  background: rgba(255, 255, 255, 0.2); /* Cor do efeito de animação */
+  border-radius: 50%; /* Torna o efeito circular */
+  transform: translate(-50%, -50%); /* Centraliza o efeito */
+  transition: width 0.4s ease, height 0.4s ease; /* Efeito de animação */
+}
+
+.cadastrar-se-btn:hover::before {
+  width: 300%; /* Aumenta o tamanho do efeito no hover */
+  height: 300%; /* Aumenta o tamanho do efeito no hover */
+}
+.original-price {
+  font-size: 1rem;
+  color: #999;
+  text-decoration: line-through;
+}
+
+.discount-label {
+  font-size: 1.2rem;
+  color: #555;
+  margin: 0;
+}
+/* Responsivo: Estilos para dispositivos com largura menor que 1024px */
+@media (max-width: 1024px) {
+  /* Ocultar a barra lateral em telas médias */
   aside {
     display: none;
   }
+
+  /* Ajustes para o conteúdo principal */
+  main {
+    margin-left: 0; /* Remove o espaço à esquerda */
+    padding-top: 180px; /* Ajusta o padding superior */
+  }
+
+  /* Ajuste na caixa de pesquisa */
+  .search-box {
+    width: 80%; /* Aumenta a largura da caixa de pesquisa */
+  }
+
+  /* Reduz o tamanho do logo */
+  .logo {
+    width: 180px; /* Ajuste do tamanho do logo */
+  }
+
+  /* Alterações no grid de produtos */
+  .products {
+    grid-template-columns: repeat(2, 1fr); /* Produtos ocupam duas colunas em telas médias */
+  }
+}
+
+/* Responsivo: Estilos para dispositivos com largura menor que 768px */
+@media (max-width: 768px) {
+  /* Ocultar a barra lateral em telas menores */
+  aside {
+    display: none;
+  }
+
+  /* Ajustes para o conteúdo principal */
   main {
     margin-left: 0;
     padding-top: 180px;
   }
+
+  /* Ajuste na caixa de pesquisa */
   .search-box {
-    width: 90%;
+    width: 90%; /* Aumenta a largura da caixa de pesquisa */
   }
+
+  /* Reduz o tamanho do logo */
   .logo {
-    width: 150px;
+    width: 150px; /* Ajuste do tamanho do logo */
+  }
+
+  /* Alterações no grid de produtos */
+  .products {
+    grid-template-columns: 1fr 1fr; /* Produtos ocupam duas colunas em telas pequenas */
+  }
+
+  /* Tamanho das imagens */
+  .product img {
+    width: 100%;
+    height: auto;
   }
 }
 
-/* BUTTONS & LINKS */
-.ver-produtos-btn, .comprar-btn {
-  display: inline-block;
-  padding: 10px 20px;
-  border-radius: 8px;
-  font-weight: bold;
-  text-decoration: none;
-  transition: background-color 0.3s;
-}
+/* Responsivo para telas muito pequenas (por exemplo, smartphones em modo retrato) */
+@media (max-width: 480px) {
+  header {
+    flex-direction: column; /* Coloca o cabeçalho em uma coluna */
+    align-items: flex-start;
+  }
 
-.ver-produtos-btn {
-  background-color: #ff6600;
-  color: #ffffff;
-}
+  .logo {
+    width: 100%; /* Logo ocupa toda a largura */
+  }
 
-.ver-produtos-btn:hover {
-  background-color: #cc5200;
-}
-.user-info {
-  background-color: #ff6600;
-  color: white;
-  text-align: center;
-  padding: 10px;
-  border-radius: 8px;
-  margin-right: 15px;
-  font-size: 1rem;
-}
-.cadastrar-se-btn {
-  display: inline-block;
-  padding: 12px 30px;
-  border-radius: 25px;
-  background-color:#ff6600;
-  color: #ffffff;
-  font-size: 16px;
-  font-weight: bold;
-  text-decoration: none;
-  text-align: center;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
+  .search-box {
+    width: 100%; /* Caixa de pesquisa ocupa toda a largura */
+  }
 
-.cadastrar-se-btn:hover {
-  background-color:#ff6600;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-}
-
-.cadastrar-se-btn:active {
-  transform: translateY(0);
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
-}
-
-.cadastrar-se-btn::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  transition: width 0.4s ease, height 0.4s ease;
-}
-
-.cadastrar-se-btn:hover::before {
-  width: 300%;
-  height: 300%;
+  /* Ajustes no grid de produtos para telas menores */
+  .products {
+    grid-template-columns: 1fr; /* Um produto por linha */
+  }
 }

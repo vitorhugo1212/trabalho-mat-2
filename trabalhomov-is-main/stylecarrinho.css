@@ -1,4 +1,4 @@
-/* Geral */
+
 body {
     margin: 0;
     padding: 0;
@@ -130,9 +130,11 @@ body {
     background-color: #388e3c;
   }
   footer {
-    background: #333;
-    color: white;
+    display: flex;
+    position: absolute;
     text-align: center;
-    padding: 40px;
-    margin-top: 50px;
+    width: 100%;
+    background: #333;
+    padding: 10px;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
   }
