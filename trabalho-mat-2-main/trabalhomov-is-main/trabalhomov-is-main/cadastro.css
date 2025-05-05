@@ -1,0 +1,104 @@
+body {
+  margin: 0; /* Remove as margens padrão aplicadas pelo navegador. */
+  padding: 0; /* Remove o preenchimento padrão aplicado pelo navegador. */
+  font-family: Arial, sans-serif; /* Define a fonte padrão como Arial, com fallback para fontes sem serifa. */
+  background-color: #f5f5f5; /* Define um fundo cinza-claro para um visual neutro e limpo. */
+  color: #333; /* Define o texto padrão em um tom de cinza escuro, fácil de ler. */
+}
+
+
+header {
+  background-color: aliceblue; /* Define uma cor de fundo suave e clara. */
+  text-align: center; /* Centraliza o texto e o conteúdo dentro do cabeçalho. */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra leve abaixo do cabeçalho para separá-lo visualmente do restante da página. */
+}
+
+.registro {
+  background: white; /* Define o fundo do container como branco para contraste com o fundo geral. */
+  padding: 30px; /* Adiciona espaço interno ao redor do conteúdo para melhor apresentação. */
+  border-radius: 15px; /* Arredonda as bordas para criar um visual moderno e amigável. */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra suave para destaque. */
+  text-align: center; /* Centraliza o conteúdo dentro do container. */
+  max-width: 400px; /* Define uma largura máxima, mantendo o design responsivo. */
+  margin: 10px auto; /* Centraliza horizontalmente e adiciona espaço acima e abaixo do container. */
+}
+
+.registro h1 {
+  font-size: 2rem; /* Define um tamanho grande para o título, destacando-o. */
+  margin-bottom: 1.5rem; /* Adiciona espaço abaixo do título. */
+  color: #ff6600; /* Aplica uma cor laranja vibrante ao título para chamar a atenção. */
+  font-family: Arial, sans-serif; /* Define a fonte como Arial, consistente com o resto do site. */
+}
+
+.formulario {
+  margin-bottom: 20px; /* Adiciona espaço abaixo do formulário para separá-lo de outros elementos. */
+  text-align: left; /* Alinha o conteúdo do formulário à esquerda. */
+}
+
+.formulario label {
+  display: block; /* Faz o label ocupar toda a largura disponível. */
+  font-weight: bold; /* Destaca o texto do label com negrito. */
+  margin-bottom: 0.5rem; /* Adiciona espaço abaixo do label para separar visualmente do campo de entrada. */
+}
+
+.formulario input {
+  width: 100%; /* Faz o campo de entrada ocupar toda a largura do container pai. */
+  padding: 0.8rem; /* Adiciona preenchimento interno para maior conforto visual e usabilidade. */
+  border: 1px solid #ddd; /* Aplica uma borda sutil e neutra ao redor do campo de entrada. */
+  border-radius: 5px; /* Arredonda as bordas do campo para um design moderno. */
+  font-size: 1rem; /* Define o tamanho do texto no campo de entrada para legibilidade. */
+  box-sizing: border-box; /* Garante que bordas e preenchimento estejam inclusos na largura total do campo. */
+}
+
+.formulario input:focus {
+  border-color: #ff6600; /* Altera a cor da borda ao focar no campo para indicar interatividade. */
+  outline: none; /* Remove o contorno padrão do navegador ao focar. */
+  box-shadow: 0 0 5px rgba(255, 102, 0, 0.5); /* Adiciona uma leve sombra laranja ao focar, destacando o campo. */
+}
+
+.finalizado {
+  width: 100%; /* Faz o botão ocupar toda a largura disponível no container pai. */
+  padding: 10px; /* Adiciona espaçamento interno ao botão para maior clicabilidade e estética. */
+  background: #ff6600; /* Define um fundo laranja vibrante para o botão. */
+  color: #fff; /* Define a cor do texto como branco, garantindo alto contraste com o fundo. */
+  font-size: 16px; /* Define um tamanho de fonte padrão, legível e consistente. */
+  border: none; /* Remove qualquer borda padrão do botão. */
+  border-radius: 5px; /* Arredonda as bordas para um visual moderno e amigável. */
+  cursor: pointer; /* Altera o cursor para o estilo de "mãozinha" ao passar sobre o botão, indicando interatividade. */
+  transition: background 0.3s ease; /* Adiciona uma transição suave ao mudar a cor de fundo quando passa o cursor do mouse. */
+}
+
+.finalizado:hover {
+  background: #d65d0c; /* Escurece a cor do fundo quando passa o cursor do mouse, indicando que o botão é interativo. */
+}
+
+label {
+  display: block; /* Garante que cada label ocupe uma linha inteira, facilitando a legibilidade. */
+  font-weight: bold; /* Destaca o texto do label com negrito. */
+  margin-bottom: 8px; /* Adiciona espaço abaixo do label para separar visualmente dos campos de entrada. */
+}
+input {
+  width: 100%; /* Faz o campo de entrada ocupar toda a largura disponível no container pai. */
+  padding: 10px; /* Adiciona espaçamento interno para conforto visual e usabilidade. */
+  font-size: 16px; /* Define um tamanho de fonte legível para o texto dentro do campo. */
+  border: 1px solid #ccc; /* Aplica uma borda cinza clara, suave e discreta. */
+  border-radius: 4px; /* Arredonda levemente as bordas para um design moderno e amigável. */
+}
+
+footer {
+  display: flex; /* Aplica o layout flexbox, organizando os itens horizontalmente por padrão. */
+  position: absolute; /* Posiciona o footer em relação ao elemento pai posicionado, mantendo-o na parte inferior, dependendo do layout. */
+  text-align: center; /* Centraliza o texto dentro do footer. */
+  align-items: center; /* Alinha verticalmente os itens do footer no centro. */
+  width: 100%; /* Faz o footer ocupar toda a largura disponível. */
+  background: #333; /* Define uma cor de fundo escura para destacar o footer. */
+  padding: 10px; /* Adiciona um espaçamento interno de 10px em todas as direções. */
+  gap: 50px; /* Define um espaçamento uniforme de 50px entre os elementos internos. */
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1); /* Aplica uma sombra leve acima do footer para um efeito de elevação. */
+}
+
+footer a {
+  text-decoration: none; /* Remove o sublinhado padrão dos links. */
+  color: #999; /* Define uma cor cinza claro para os links, complementando o fundo escuro. */
+  display: inline; /* Mantém o link como um elemento inline padrão. */
+}
