@@ -1,0 +1,98 @@
+body {
+  margin: 0; /* Remove as margens padrão do navegador para criar uma base limpa. */
+  padding: 0; /* Remove o preenchimento padrão do navegador. */
+  font-family: Arial, sans-serif; /* Define a fonte padrão como Arial, com fallback para fontes sem serifa. */
+  background-color: #f5f5f5; /* Aplica uma cor de fundo cinza-claro para um visual neutro. */
+  color: #333; /* Define o texto padrão como cinza-escuro, garantindo boa legibilidade. */
+}
+
+  
+  header {
+    background-color: aliceblue; /* Define um fundo claro e suave para o cabeçalho. */
+    text-align: center; /* Centraliza o conteúdo do cabeçalho. */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra leve para separar visualmente o cabeçalho do restante da página. */
+  }
+  
+
+  .pagina {
+    max-width: 800px; /* Limita a largura do container para melhorar a legibilidade. */
+    margin: 125px auto; /* Centraliza o container horizontalmente e adiciona margem superior. */
+    padding: 2rem; /* Adiciona espaçamento interno ao redor do conteúdo. */
+    background: white; /* Define um fundo branco para destaque. */
+    border-radius: 10px; /* Arredonda as bordas para um visual moderno. */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra leve para um efeito elevado. */
+  }
+  
+  
+  .pagina h1 {
+    text-align: center; /* Centraliza o texto do título. */
+    margin-bottom: 1.5rem; /* Adiciona espaço inferior para separação do conteúdo. */
+    color: #ff6600; /* Define uma cor laranja vibrante para chamar atenção. */
+  }
+  
+  #items {
+    list-style: none; /* Remove os marcadores padrão da lista. */
+    padding: 0; /* Remove o preenchimento interno da lista. */
+    margin: 0; /* Remove as margens externas da lista. */
+  }  
+  #total {
+    font-size: 1.5rem; /* Define um tamanho maior para destacar o total. */
+    font-weight: bold; /* Aplica negrito para ênfase. */
+    text-align: right; /* Alinha o texto à direita. */
+    margin: 1.5rem 0; /* Adiciona espaçamento acima e abaixo. */
+    color: #333; /* Define a cor como cinza-escuro, consistente com o tema. */
+  }
+  .ações {
+    display: flex; /* Define um layout flexível para os botões. */
+    justify-content: space-between; /* Distribui os botões uniformemente ao longo do container. */
+    align-items: center; /* Alinha os botões verticalmente ao centro. */
+    gap: 1rem; /* Adiciona espaçamento entre os botões. */
+  }
+  
+
+  .ações button {
+    padding: 0.8rem 1.5rem; /* Adiciona espaçamento interno para maior conforto visual. */
+    border: none; /* Remove a borda padrão do botão. */
+    border-radius: 5px; /* Arredonda as bordas do botão. */
+    cursor: pointer; /* Altera o cursor para "pointer", indicando interatividade. */
+    font-size: 1rem; /* Define um tamanho de fonte legível. */
+    transition: all 0.3s ease; /* Aplica uma transição suave para mudanças de estado. */
+  }
+  
+  
+  #limpa {
+    background-color: #e53935;/* Define um fundo vermelho para indicar que vai limpar o carrinho */
+    color: white; /* Define a cor do texto como branco para contraste. */
+  }
+  
+  #limpa:hover {
+    background-color: #c62828; /* Escurece o fundo quando passa o mouse, para indicar interatividade. */
+  }
+  
+  #finaliza {
+    background-color: #43a047; /* Define um fundo verde para indicar sucesso ou progresso. */
+    color: white; /* Define a cor do texto como branco para contraste. */
+  }
+  
+  #finaliza:hover {
+    background-color: #388e3c; /* Escurece o fundo quando passa o mouse, para indicar interatividade. */
+  }
+  
+
+  footer {
+    display: flex; /* Cria um layout flexível para organizar o conteúdo do rodapé. */
+    position: absolute; /* Posiciona o rodapé no final da página. */
+    text-align: center; /* Centraliza o texto dentro do rodapé. */
+    align-items: center; /* Alinha verticalmente o conteúdo ao centro. */
+    width: 100%; /* Faz o rodapé ocupar toda a largura da tela. */
+    background: #333; /* Define um fundo escuro para contraste com o resto da página. */
+    padding: 10px; /* Adiciona espaçamento interno para conforto visual. */
+    gap: 50px; /* Adiciona espaço entre os itens do rodapé. */
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra superior leve. */
+  }
+  
+  footer a {
+    text-decoration: none; /* Remove o sublinhado dos links. */
+    color: #999; /* Define a cor dos links como cinza claro. */
+    display: inline; /* Garante que o link seja exibido como inline. */
+  }  
