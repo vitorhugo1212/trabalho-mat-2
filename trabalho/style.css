@@ -1,4 +1,4 @@
-/* BODY */
+
 body {
   margin: 0; /* Remove todas as margens padrão do navegador para garantir consistência visual */
   padding: 0; /* Remove o preenchimento padrão do navegador */
@@ -6,10 +6,17 @@ body {
   font-family: Arial, sans-serif; /* Define a fonte padrão para o site, garantindo legibilidade */
   background: #f5f5f5; /* Define um fundo claro para todo o site, criando um visual neutro e moderno */
   color: #333; /* Define a cor do texto como cinza escuro, que facilita a leitura e reduz o contraste agressivo */
+  display: grid;
+  grid-template-areas: 
+      "cabe cabe"
+      "brac corp"
+      "pern pern";
+  grid-template-columns: 270px auto;
+  grid-template-rows: auto;
 }
 
-/* HEADER */
 header {
+  grid-area: cabe;
   display: flex; /* Organiza os itens no cabeçalho em uma linha flexível */
   gap: 100px; /* Adiciona um espaço de 30px entre os itens dentro do cabeçalho */
   align-items: center; /* Alinha os itens verticalmente ao centro */
@@ -23,7 +30,6 @@ header {
   z-index: 1000; /* Garante que o cabeçalho ficará sobre outros elementos da página */
 }
 
-/* Logo */
 .logoimg a {
   display: inline-block; /* Faz com que o link que envolve o logo seja tratado como um bloco inline */
 }
@@ -67,14 +73,16 @@ header {
   width: 24px; /*tamanho da imagem lupa dentro da barra de pesquisa*/
 }
 
-
-/* Ícones do Header */
 .carrinho {
   display: flex; /* Organiza os ícones dentro do cabeçalho em linha */
   align-items: center; /* Alinha os ícones verticalmente ao centro */
+  transition: transform 0.3s ease;/*adiciona uma transição suave para a transformação*/
 }
-
+.carrinho:hover{
+  transform: scale(1.1); /*aumenta o tamanho do carrinho quando passa o cursor do mouse*/
+}
 aside {
+  grid-area: brac;
   top: 100px; /* Define a distância de 100px do topo da página, posicionando o elemento abaixo de outros conteúdos fixos, como headers. */
   position: fixed; /* Mantém o elemento fixo em relação à janela de visualização, mesmo durante o scroll. */
   background: #333; /* Aplica uma cor de fundo escura (cinza) ao elemento. */
@@ -82,28 +90,15 @@ aside {
   height: 1000px; /* Define uma altura fixa de 1000px para o aside. */
   padding: 10px; /* Adiciona um espaçamento interno de 10px ao redor do conteúdo do aside. */
 }
-
-
-aside ul {
-  list-style: none; /* Remove os marcadores da lista */
-  margin-top: 20px; /* Espaço superior */
+aside ul{
+  position: absolute;
 }
-
-aside ul li a {
-  text-decoration: none; /* Remove o sublinhado dos links */
-  color: whitesmoke; /* Cor do texto dos links */
-  display: block; /* Exibe os links como blocos */
-  padding: 10px 0; /* Espaçamento interno */
-}
-
-/* MAIN CONTENT: Estiliza o conteúdo principal da página */
 main {
+  grid-area: corp;
   position: relative;
-  margin-left: 270px;  /*Espaçamento à esquerda para compensar o menu lateral */
   padding: 140px 30px 50px; /* Espaçamento interno */
 }
 
-/* PRODUTOS: Exibe os produtos em uma grade */
 .produtos {
   display: grid; /* Usado para exibir os produtos em formato de grid */
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Define as colunas com tamanho flexível */
@@ -111,7 +106,6 @@ main {
   animation: fadeInUp 1s ease-in-out; /* Animação para entrada suave */
 }
 
-/* ESTILO DOS PRODUTOS */
 .produto  {
   background: #fff; /* Fundo branco para os produtos */
   padding: 20px; /* Espaçamento interno */
@@ -217,8 +211,9 @@ main {
 }
 
 footer {
+  grid-area: pern;
   display: flex; /* Define um layout flexível para os itens do footer. */
-  position: absolute; /* Posiciona o footer em relação ao elemento pai mais próximo posicionado. */
+  position: relative;
   text-align: center; /* Centraliza o texto dentro do footer. */
   align-items: center; /* Alinha os itens verticalmente no centro. */
   width: 100%; /* Faz o footer ocupar toda a largura disponível. */
@@ -226,6 +221,7 @@ footer {
   padding: 10px; /* Adiciona espaço interno ao redor do conteúdo do footer. */
   gap: 50px; /* Adiciona espaçamento de 50px entre os itens do footer. */
   box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra leve acima do footer. */
+  top: auto;
 }
 
 footer a {
