@@ -92,7 +92,15 @@ aside {
 }
 aside ul{
   position: absolute;
+  list-style-type: none;
+  color: #aaa;
+  font-weight: bold;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+aside li{
+  text-align: center;
+    padding: 5px 0px 16px;
+  }
 main {
   grid-area: corp;
   position: relative;
